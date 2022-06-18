@@ -34,7 +34,7 @@ func GetInfo() []Info {
 		}
 		GPUInfos = append(GPUInfos, Info{
 			Id:          arrayValue[0],
-			MemoryUsage: round((memoryUsage/memoryTotal)*100, 2),
+			MemoryUsage: Round((memoryUsage/memoryTotal)*100, 2),
 		})
 	}
 
@@ -46,7 +46,7 @@ type Info struct {
 	MemoryUsage float64
 }
 
-func round(num, places float64) float64 {
+func Round(num, places float64) float64 {
 	shift := math.Pow(10, places)
 	return roundInt(num*shift) / shift
 }
