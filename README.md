@@ -6,5 +6,7 @@ Go lang version of [GPUContainerRunner](https://github.com/KensukeNakazawa/GPUCo
 > git config commit.template .github/.commit_template
 
 ### :hammer: Build 
-> go build cmd/rungpu/main.go && mv main rungpu
+> go build cmd/rungpu/main.go && mv main rungpu  
+
+`linux platform`
 > GOOS=linux GOARCH=amd64 go build -o rungpu cmd/rungpu/main.go
