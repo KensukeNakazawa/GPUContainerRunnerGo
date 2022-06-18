@@ -2,7 +2,9 @@ package cui_input
 
 import (
 	"GPUContainerRunnerGo/pkg/docker"
+	"GPUContainerRunnerGo/pkg/gpu"
 	"fmt"
+	"strconv"
 )
 
 func InputUser() ScriptInfo {
@@ -21,6 +23,10 @@ func InputUser() ScriptInfo {
 	fmt.Print("Input your file(Python) path:")
 	fmt.Scan(&filePath)
 
+	gpuInfos := gpu.GetInfo()
+	for _, gpuInfo := range gpuInfos {
+		fmt.Println("ID: " + gpuInfo.Id + "(" + strconv.FormatFloat(gpuInfo.MemoryUsage, 'f', -1, 64) + "%)")
+	}
 	fmt.Print("Input your gpu id: ")
 	fmt.Scan(&gpuId)
 
@@ -42,7 +48,7 @@ func InputUser() ScriptInfo {
 	fmt.Print("Input your log path: ")
 	fmt.Scan(&logPath)
 
-	scriptInfo := ScriptInfo{
+	return ScriptInfo{
 		VolumePath: volumePath,
 		FilePath:   filePath,
 		GPUId:      gpuId,
@@ -50,5 +56,4 @@ func InputUser() ScriptInfo {
 		ImageTag:   imageTag,
 		LogPath:    logPath,
 	}
-	return scriptInfo
 }

@@ -7,3 +7,4 @@ Go lang version of [GPUContainerRunner](https://github.com/KensukeNakazawa/GPUCo
 
 ### :hammer: Build 
 > go build cmd/rungpu/main.go && mv main rungpu
+> GOOS=linux GOARCH=amd64 go build -o rungpu cmd/rungpu/main.go
