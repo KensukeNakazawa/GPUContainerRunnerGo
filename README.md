@@ -1,7 +1,9 @@
 ## 💡 Overview
 Go lang version of [GPUContainerRunner](https://github.com/KensukeNakazawa/GPUContainerRunner) for practicing go lang
 
-## ✅ Setup
+version: `go1.18.3 darwin/arm64`
+
+## :wrench: Setup
 
 > $ git config commit.template .github/.commit_template
 
